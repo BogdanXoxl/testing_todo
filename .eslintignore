@@ -1,0 +1,5 @@
+/.git
+/.vscode
+/.next
+node_modules
+#!.storybook
