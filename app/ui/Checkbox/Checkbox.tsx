@@ -11,12 +11,12 @@ export const Checkbox: React.FC<Props> = ({ checked = false, className }) => {
   return (
     <div
       className={clsx(
-        "h-7 w-7 shrink-0 rounded-lg border-2 border-pink-400",
-        checked && "bg-pink-400",
+        "h-7 w-7 shrink-0 rounded-lg border-2 border-primary",
+        checked && "bg-primary",
         className
       )}
     >
-      {checked && <BsCheck size={24} className="text-gray-900" />}
+      {checked && <BsCheck size={24} className="text-secondary" />}
     </div>
   );
 };

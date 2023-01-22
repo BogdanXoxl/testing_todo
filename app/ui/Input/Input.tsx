@@ -6,14 +6,15 @@ import { BsPlusCircle } from "react-icons/bs";
 type Props = {
   value?: string;
   placeholder?: string;
-  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onClick?: () => void;
 };
 
 export const Input: React.FC<Props> = ({ value, placeholder, onClick, onChange }) => {
   return (
-    <div className="flex min-h-[68px] w-full overflow-hidden rounded-2xl border-2 border-gray-800 bg-gray-900 focus-within:border-gray-500">
+    <div className="flex min-h-[68px] w-full overflow-hidden rounded-2xl border-2 border-neutral bg-secondary focus-within:border-secondary-light-max">
       <input
+        autoFocus
         type="text"
         className="w-full border-none bg-transparent px-5 outline-none"
         value={value}
@@ -23,7 +24,7 @@ export const Input: React.FC<Props> = ({ value, placeholder, onClick, onChange }
       />
       <button
         onClick={onClick}
-        className="flex items-center rounded-r-xl bg-pink-400 px-4 outline-inherit focus:ring-0 active:bg-pink-500"
+        className="flex items-center rounded-r-xl bg-primary px-4 outline-inherit focus:ring-0 active:bg-primary-darken"
       >
         <BsPlusCircle className="h-7 w-7" />
       </button>

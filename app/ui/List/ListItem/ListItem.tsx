@@ -22,16 +22,17 @@ export const ListItem: React.FC<Props> = ({
   return (
     <li
       className={clsx(
-        "flex min-h-[68px] w-full items-center justify-between gap-x-4 rounded-2xl bg-gray-800 p-5",
+        "flex min-h-[68px] w-full items-center justify-between gap-x-4 rounded-2xl bg-neutral p-5 text-white",
         textDecoration,
         className
       )}
-      onClick={onClick}
     >
-      <span className="flex gap-x-4">{children}</span>
+      <span className="flex gap-x-4" onClick={onClick}>
+        {children}
+      </span>
       {PostIcon && (
         <PostIcon
-          className="h-6 w-6 shrink-0 text-gray-400 hover:text-gray-300"
+          className="h-6 w-6 shrink-0 cursor-pointer text-secondary-light-max hover:text-secondary-light-min"
           onClick={onIconClick}
         />
       )}

@@ -4,3 +4,4 @@
 npx pretty-quick --staged
 tsc -p tsconfig.json --noEmit && lint-staged --concurrent false
 yarn test
+yarn build-storybook && loki --requireReference --reactUri file:./storybook-static
