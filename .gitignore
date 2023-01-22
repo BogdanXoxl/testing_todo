@@ -2,7 +2,6 @@
 
 .idea
 .vscode
-storybook-static
 
 # dependencies
 /node_modules
