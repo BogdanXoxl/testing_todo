@@ -9,7 +9,7 @@
     "test": "jest",
     "test-c": "yarn test --coverage",
     "lint": "next lint",
-    "sb": "start-storybook -p 6006",
+    "sb": "start-storybook -p 6006 --no-open",
     "test-sb": "test-storybook",
     "prepare": "husky install",
     "check-types": "tsc --noEmit --pretty"
@@ -33,7 +33,7 @@
     "@storybook/builder-webpack5": "^6.5.15",
     "@storybook/manager-webpack5": "^6.5.15",
     "@storybook/react": "^6.5.15",
-    "@storybook/test-runner": "^0.9.3",
+    "@storybook/test-runner": "^0.9.4",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/dom": "^8.20.0",
     "@testing-library/jest-dom": "^5.16.5",
