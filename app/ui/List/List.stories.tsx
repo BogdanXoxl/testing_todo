@@ -3,14 +3,14 @@ import React from "react";
 import { FiTrash2 } from "react-icons/fi";
 
 import { Checkbox } from "../Checkbox";
-import { List } from "./List";
+import { List as ListComponent } from "./List";
 import { ListItem } from "./ListItem";
 
-type ListProps = React.ComponentProps<typeof List>;
+type ListProps = React.ComponentProps<typeof ListComponent>;
 
 export default {
   title: "UI/List",
-  component: List,
+  component: ListComponent,
   argTypes: {
     className: {
       type: "string",
@@ -24,10 +24,10 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof List>;
+} as ComponentMeta<typeof ListComponent>;
 
 const Template: Story<ListProps & { items_count: number }> = (args) => (
-  <List {...args}>
+  <ListComponent {...args}>
     {[...Array(args.items_count)].map((el) => (
       <ListItem key={el}>{el}list item children</ListItem>
     ))}
@@ -37,7 +37,7 @@ const Template: Story<ListProps & { items_count: number }> = (args) => (
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam debitis deleniti eius
       impedit praesentium quas.
     </ListItem>
-  </List>
+  </ListComponent>
 );
 
-export const Default = Template.bind({});
+export const List = Template.bind({});

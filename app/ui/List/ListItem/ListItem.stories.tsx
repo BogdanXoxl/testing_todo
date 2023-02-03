@@ -3,11 +3,11 @@ import React from "react";
 import { FiTrash2 } from "react-icons/fi";
 
 import { Checkbox } from "../../Checkbox";
-import { ListItem } from "./ListItem";
+import { ListItem as ListItemComponent } from "./ListItem";
 
 export default {
   title: "UI/ListItem",
-  component: ListItem,
+  component: ListItemComponent,
   argTypes: {
     className: {
       type: "string",
@@ -21,18 +21,18 @@ export default {
       defaultValue: "children",
     },
   },
-} as ComponentMeta<typeof ListItem>;
+} as ComponentMeta<typeof ListItemComponent>;
 
-const Template: ComponentStory<typeof ListItem> = (args) => (
+const Template: ComponentStory<typeof ListItemComponent> = (args) => (
   <div className="flex flex-col gap-y-4">
-    <ListItem {...args} />
-    <ListItem {...args} postIcon={FiTrash2} />
-    <ListItem {...args}>
+    <ListItemComponent {...args} />
+    <ListItemComponent {...args} postIcon={FiTrash2} />
+    <ListItemComponent {...args}>
       <Checkbox />
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam debitis deleniti eius
       impedit praesentium quas.
-    </ListItem>
+    </ListItemComponent>
   </div>
 );
 
-export const Default = Template.bind({});
+export const ListItem = Template.bind({});
