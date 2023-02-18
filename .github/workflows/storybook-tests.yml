@@ -1,4 +1,4 @@
-name: "Storybook Tests"
+name: Storybook Tests
 on: push
 jobs:
   test:
@@ -11,12 +11,5 @@ jobs:
           node-version: "14.x"
       - name: Install dependencies
         run: yarn
-      - name: Install Playwright
-        run: npx playwright install --with-deps
-      - name: Build Storybook
-        run: yarn build-sb--quiet
-      - name: Serve Storybook and run tests
-        run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && yarn test-sb"
+      - name: Run Storybook tests
+        run: yarn test-sb:ci

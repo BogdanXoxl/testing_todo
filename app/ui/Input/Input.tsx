@@ -12,7 +12,7 @@ type Props = {
 
 export const Input: React.FC<Props> = ({ value, placeholder, onClick, onChange }) => {
   return (
-    <div className="flex min-h-[68px] w-full overflow-hidden rounded-2xl border-2 border-neutral bg-secondary focus-within:border-secondary-light-max">
+    <div className="flex min-h-[68px] w-full overflow-hidden rounded-2xl border-2 border-neutral bg-secondary text-white focus-within:border-secondary-light-max">
       <input
         autoFocus
         type="text"

@@ -24,7 +24,7 @@ export default {
 } as ComponentMeta<typeof ListItemComponent>;
 
 const Template: ComponentStory<typeof ListItemComponent> = (args) => (
-  <div className="flex flex-col gap-y-4">
+  <ol className="flex flex-col gap-y-4">
     <ListItemComponent {...args} />
     <ListItemComponent {...args} postIcon={FiTrash2} />
     <ListItemComponent {...args}>
@@ -32,7 +32,7 @@ const Template: ComponentStory<typeof ListItemComponent> = (args) => (
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam debitis deleniti eius
       impedit praesentium quas.
     </ListItemComponent>
-  </div>
+  </ol>
 );
 
 export const ListItem = Template.bind({});

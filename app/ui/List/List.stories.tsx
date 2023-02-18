@@ -1,4 +1,6 @@
+import { expect } from "@storybook/jest";
 import type { ComponentMeta, Story } from "@storybook/react";
+import { within } from "@storybook/testing-library";
 import React from "react";
 import { FiTrash2 } from "react-icons/fi";
 
@@ -41,3 +43,9 @@ const Template: Story<ListProps & { items_count: number }> = (args) => (
 );
 
 export const List = Template.bind({});
+List.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+  const listItem = await canvas.getAllByText(/list item children/i);
+
+  await expect(listItem[0].innerText).toBe("list item children");
+};

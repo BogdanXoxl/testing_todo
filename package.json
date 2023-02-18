@@ -10,7 +10,9 @@
     "test-c": "yarn test --coverage",
     "lint": "next lint",
     "sb": "start-storybook -p 6006 --no-open",
+    "storybook-build": "build-storybook",
     "test-sb": "test-storybook",
+    "test-sb:ci": "concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"wait-on tcp:6006 && yarn test-storybook\"",
     "prepare": "husky install",
     "check-types": "tsc --noEmit --pretty"
   },
@@ -20,19 +22,23 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
-    "storybook": "^6.5.15"
+    "storybook": "^6.5.16"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
-    "@storybook/addon-a11y": "^6.5.15",
-    "@storybook/addon-actions": "^6.5.15",
-    "@storybook/addon-essentials": "^6.5.15",
-    "@storybook/addon-interactions": "^6.5.15",
-    "@storybook/addon-links": "^6.5.15",
+    "@storybook/addon-a11y": "^6.5.16",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-coverage": "^0.0.7",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-jest": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
     "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/builder-webpack5": "^6.5.15",
-    "@storybook/manager-webpack5": "^6.5.15",
-    "@storybook/react": "^6.5.15",
+    "@storybook/addon-storysource": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/jest": "^0.0.10",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "^6.5.16",
     "@storybook/test-runner": "^0.9.4",
     "@storybook/testing-library": "^0.0.13",
     "@testing-library/dom": "^8.20.0",
@@ -45,7 +51,9 @@
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
     "autoprefixer": "^10.4.13",
+    "axe-playwright": "^1.1.12",
     "babel-loader": "^8.3.0",
+    "chromatic": "^6.17.0",
     "concurrently": "^7.6.0",
     "eslint": "8.22.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -76,5 +84,7 @@
     "pretty-quick": "^3.1.3",
     "tailwindcss": "^3.2.4",
     "typescript": "4.9.4"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "testing_todo@0.1.0"
 }
