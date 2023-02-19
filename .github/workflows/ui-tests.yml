@@ -14,7 +14,6 @@ jobs:
         id: yarn-cache
         with:
           path: |
-            ~/.cache/Cypress
             node_modules
           key: ${{ runner.os }}-yarn-v1-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
