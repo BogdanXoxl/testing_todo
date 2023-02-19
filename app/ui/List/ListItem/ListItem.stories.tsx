@@ -1,4 +1,6 @@
 import type { ComponentMeta, ComponentStory } from "@storybook/react";
+// import { rest } from 'msw';
+// import { findByRole, userEvent, within } from "@storybook/testing-library";
 import React from "react";
 import { FiTrash2 } from "react-icons/fi";
 
@@ -20,6 +22,11 @@ export default {
       type: "string",
       defaultValue: "children",
     },
+    // mock component actions
+    // onArchiveTask: { action: "onArchiveTask" },
+    // onTogglePinTask: { action: "onTogglePinTask" },
+    // onEditTitle: { action: "onEditTitle" },
+    // onDeleteTask: { action: "onDeleteTask" },
   },
 } as ComponentMeta<typeof ListItemComponent>;
 
@@ -36,3 +43,29 @@ const Template: ComponentStory<typeof ListItemComponent> = (args) => (
 );
 
 export const ListItem = Template.bind({});
+ListItem.parameters = {
+  // msw: {
+  //   handlers: [
+  //     // rest.get("/tasks", (req, res, ctx) => {
+  //     //   return res(ctx.json(TaskListDefault.args));
+  //     // }),
+  //   ],
+  // },
+};
+// ListItem.play = async ({ canvasElement }) => {
+// const canvas = within(canvasElement);
+// const getTask = (name) => canvas.findByRole("listitem", { name });
+//
+// // Find the task to pin
+// const itemToPin = await getTask("Export logo");
+//
+// // Find the pin button
+// const pinButton = await findByRole(itemToPin, "button", { name: "pin" });
+//
+// // Click the pin button
+// await userEvent.click(pinButton);
+//
+// // Check that the pin button is now a unpin button
+// const unpinButton = within(itemToPin).getByRole("button", { name: "unpin" });
+// await expect(unpinButton).toBeInTheDocument();
+// };

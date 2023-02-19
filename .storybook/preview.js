@@ -1,5 +1,8 @@
 import "../styles/globals.css";
 import * as NextImage from "next/image";
+import { initialize, mswDecorator } from "msw-storybook-addon";
+
+initialize();
 
 const OriginalNextImage = NextImage.default;
 
@@ -25,4 +28,9 @@ export const parameters = {
       },
     ],
   },
+  a11y: {
+    manual: false,
+  },
 };
+
+export const decorators = [mswDecorator];

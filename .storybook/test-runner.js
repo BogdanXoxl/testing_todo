@@ -5,9 +5,14 @@ module.exports = {
     await injectAxe(page);
   },
   postRender: async (page) => {
-    await checkA11y(page, "#root", {
-      detailedReport: true,
-      detailedReportOptions: { html: true },
-    });
+    await checkA11y(
+      page,
+      "#root",
+      {
+        detailedReport: true,
+        detailedReportOptions: { html: true },
+      },
+      true
+    );
   },
 };
