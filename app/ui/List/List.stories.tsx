@@ -49,3 +49,10 @@ List.play = async ({ canvasElement }) => {
 
   await expect(listItem[0].innerText).toBe("list item children");
 };
+
+List.parameters = {
+  design: {
+    type: "figma",
+    url: "https://www.figma.com/file/oy7eXb4O41oXjFMD9PBCuC/Untitled?node-id=18%3A33&t=dxEkiS9tK7PLZfgX-0",
+  },
+};

@@ -27,10 +27,9 @@ function MainPage() {
 
 export default MainPage;
 
-// TODO:: pre-commit
-// TODO:: check github ci/cd
-// TODO:: add addons
+// TODO:: check playroom
 // TODO:: architecture lecture
+// TODO:: clean dependencies
 // TODO:: components with view and logic separation
 
 // TODO:: create components
@@ -41,7 +40,6 @@ export default MainPage;
 
 // TODO:: add mocking server to sb
 // TODO:: add cypress
-// TODO:: remove jest if it unnecessary
 // TODO:: deploy sb
 
 // TODO:: add Go backend with GQL

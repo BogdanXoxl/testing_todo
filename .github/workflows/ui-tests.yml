@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Checkout Commit
         uses: actions/checkout@v2
-      - name: Cache yarn dependencies and cypress
+      - name: Cache yarn dependencies
         uses: actions/cache@v2
         id: yarn-cache
         with:
@@ -47,7 +47,7 @@ jobs:
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 6006 --silent" \
-            "npx wait-on tcp:6006 && yarn test-sb"
+            "npx wait-on tcp:6006 && yarn test-sb --coverage"
   # Run visual and composition tests with Chromatic
   visual-and-composition:
     runs-on: ubuntu-latest
